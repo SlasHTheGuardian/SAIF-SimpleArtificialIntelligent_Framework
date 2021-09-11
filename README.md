@@ -2,7 +2,3 @@
 S_Artificial_Intelligence
 
 This is a library for creation a feed-forward neural networks with any number of neurons in each layer and any number of layers.
-
-SlasH`s Artificial Intelligence
-
-Простая нейросеть в 6 нейронов. 
