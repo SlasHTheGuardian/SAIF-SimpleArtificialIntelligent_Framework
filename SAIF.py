@@ -3,7 +3,7 @@ import numpy as np
 
         
 class neuron:
-    
+
     def __init__(self, name, number, layer, value, width_next_layer):
         self.name = name
         self.number = number
@@ -25,7 +25,6 @@ class neuron:
 
     def logistic_function(self, x):
         return .5 * (1 + np.tanh(.5 * x))
-
 
     def generate_error(self, next_layer_error):
         self.error = 0
@@ -57,11 +56,12 @@ class neuron:
               "\nLast delta weights: ", self.dW,
               "\n------------| Info about", self.name, "|------------")
         
-    def set_initial_settings():
+    def set_initial_settings(self, width_next_layer):
         for i in range(width_next_layer):
             self.W.append(random.random())
         for i in range(width_next_layer):
             self.dW.append(0)
+
 
 class neunet:
     
@@ -134,7 +134,6 @@ class neunet:
                         if i < len(self.matrix):
                             self.matrix[i][j].generate_data()
 
-                        
                 for j in range(len(output_data)):
                     self.matrix[-1][j].error = output_data[j] - self.matrix[-1][j].value
                 for i in range(len(self.matrix)):
@@ -212,7 +211,6 @@ class neunet:
                 prediction_data.append(self.matrix[-1][j].value)
             return prediction_data
 
-                            
         elif len(input_data) > len(self.matrix[0]):
             print("Введено слишком много входных данных.",
                   "\nДлина массива входных данных:", len(input_data),
@@ -223,7 +221,6 @@ class neunet:
                   "\nДлина массива входных данных:", len(input_data),
                   "\nНейронов нулевого слоя:", len(self.matrix[0]),
                   "\nЦикл предсказания отменен.")
-            
 
     def display_info(self):
         for i in range(len(self.matrix)):
@@ -231,4 +228,3 @@ class neunet:
                 self.bias[i].display_info()
             for j in range(len(self.matrix[i])):
                 self.matrix[i][j].display_info()
-

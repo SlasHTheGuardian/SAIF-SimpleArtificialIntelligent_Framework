@@ -1,3 +1,8 @@
-# SAI
+# Simple Artificial Intelligent Framework
 
-This is a library for creation a feed-forward neural networks with any number of neurons in each layer and any number of layers.
+
+## SAIF.py
+This is a custom library for creation a feed-forward neural networks with any number of neurons on each layer and any number of layers. 
+
+## Neuronet.py
+This file is an example of usage of this library
